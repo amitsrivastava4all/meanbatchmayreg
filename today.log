@@ -1,0 +1,223 @@
+var a ;
+undefined
+typeof(a);
+"undefined"
+a = 1000;
+1000
+typeof(a);
+"number"
+a=1;
+1
+typeof(a);
+"number"
+a= 1000000;
+1000000
+typeof(a);
+"number"
+a = 100.20;
+100.2
+typeof(a);
+"number"
+a = 100 / 0 ;
+Infinity
+a
+Infinity
+typeof(a);
+"number"
+a = 100;
+100
+b = "100";
+"100"
+typeof(a);
+"number"
+typeof(b);
+"string"
+a + b
+"100100"
+a + parseInt(b);
+200
+c = "1000.20";
+"1000.20"
+parseInt(c);
+1000
+parseFloat(c);
+1000.2
+Number("1000");
+1000
+Number("1000.20")
+1000.2
+var x = new Number();
+undefined
+typeof x;
+"object"
+x instanceof Number;
+true
+function adder(){
+console.log(" I am Adder ");
+}
+undefined
+typeof adder;
+"function"
+adder();
+VM604:2  I am Adder 
+undefined
+x.toExponential();
+"0e+0"
+typeof adder;
+"function"
+typeof Number;
+"function"
+typeof parseInt
+"function"
+parseInt("100");
+100
+window.parseInt("1000")
+1000
+typeof(window);
+"object"
+window.adder()
+VM604:2  I am Adder 
+undefined
+window instanceof Window;
+true
+typeof Window;
+"function"
+parseInt("Amit")
+NaN
+c = parseInt("Amit")
+NaN
+c
+NaN
+typeof(c)
+"number"
+isNaN(c)
+true
+isNaN(c)?0:c
+0
+c = 1000
+1000
+isNaN(c)?0:c
+1000
+c = 1000 * "Amit"
+NaN
+isNaN(c)?0:c
+0
+c = 1000/0;
+Infinity
+isFinite(c)?c:0
+0
+class A{
+}
+undefined
+var e = new A();
+undefined
+typeof e;
+"object"
+e instanceof A;.
+VM1033:1 Uncaught SyntaxError: Unexpected token .
+e instanceof A'
+VM1043:1 Uncaught SyntaxError: Invalid or unexpected token
+e instanceof A;
+true
+typeof A;
+"function"
+a = "Amit";
+"Amit"
+typeof (a)
+"string"
+a = 'Amit'
+"Amit"
+typeof (a)
+"string"
+a = ` hgjdfhgk
+gjdflkgjhd
+gdjglkdfhg	`;
+" hgjdfhgk
+gjdflkgjhd
+gdjglkdfhg	"
+typeof a
+"string"
+a = 1000;
+1000
+b = 2000
+2000
+console.log("A is "+a+ " and B is "+b);
+VM1232:1 A is 1000 and B is 2000
+undefined
+console.log(`A is ${a} and B is ${b}`);
+VM1284:1 A is 1000 and B is 2000
+undefined
+a = true;
+true
+typeof a
+"boolean"
+a = false
+false
+typeof a
+"boolean"
+100 + true
+101
+100 + "100"
+"100100"
+100 - "100"
+0
+"Amit" + " Srivastava"
+"Amit Srivastava"
+msg = "Welcome "
+"Welcome "
+user = "Amit"
+"Amit"
+msg + user
+"Welcome Amit"
+"100" - "200"
+-100
+"100" * 10
+1000
+"109"/2
+54.5
+2 **3
+8
+100 - "Amit"
+NaN
+var bag = ["apple","orange","mango"];
+undefined
+var temp = [44, 34,42,18,43,21];
+undefined
+var temp  = {"delhi":44, "mumbai":34};
+undefined
+temp["delhi"]
+44
+bag[0];
+"apple"
+typeof temp;
+"object"
+typeof bag;
+"object"
+bag instanceof Array;
+true
+temp instanceof Object;
+true
+x;
+Number {0}
+window;
+Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, parent: Window, …}
+bag instanceof Array;
+true
+bag instanceof Object;
+true
+window instanceof Window;
+true
+window instanceof Object;
+true
+x instanceof Number;
+true
+x instanceof Object
+true
+var score = {"team":"India", score:300};
+undefined
+console.log("Today "+score["team"]);
+VM2016:1 Today India
+undefined
+console.log("Today "+score["team"]+" Score is "+score["score"]);
+VM2063:1 Today India Score is 300
+undefined
