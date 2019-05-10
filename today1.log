@@ -1,0 +1,251 @@
+var a = 10;
+undefined
+typeof (a)
+"number"
+a = "Amit";
+"Amit"
+typeof (a)
+"string"
+a = true;
+true
+typeof (a)
+"boolean"
+var b ;
+undefined
+typeof b
+"undefined"
+var c = 1000;
+undefined
+var [x,y,z]= [10,20,30];
+undefined
+x
+10
+y
+20
+z
+30
+var t = [10,20,30,40,50]
+undefined
+t[100]
+undefined
+t.length
+5
+for(let q of t ){
+console.log(q);
+}
+VM394:2 10
+VM394:2 20
+VM394:2 30
+VM394:2 40
+VM394:2 50
+undefined
+t;
+(5) [10, 20, 30, 40, 50]
+t.push(1000);
+6
+t;
+(6) [10, 20, 30, 40, 50, 1000]
+t.pop();
+1000
+t;
+(5) [10, 20, 30, 40, 50]
+var r = t[0]
+undefined
+r;
+10
+var e = t[2];
+
+undefined
+e;
+30
+var [x,,y,z] = t;
+undefined
+x;
+10
+y;
+
+30
+z;
+40
+var [x,,y,z,p,m] = t;
+undefined
+p
+50
+m
+undefined
+function add(){
+console.log(" I am in Add ");
+}
+undefined
+add();
+VM649:2  I am in Add 
+undefined
+add(10,20,30)
+VM649:2  I am in Add 
+undefined
+add("one",10,[10,20])
+VM649:2  I am in Add 
+undefined
+console.dir(add);
+VM750:1 ƒ add()arguments: nullcaller: nulllength: 0name: "add"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM649:1[[Scopes]]: Scopes[1]
+undefined
+function add(){
+console.log(" I am in Add ",arguments.length);
+}
+undefined
+add();
+VM811:2  I am in Add  0
+undefined
+add(10,20,30)
+VM811:2  I am in Add  3
+undefined
+add("one",10,[10,20])
+VM811:2  I am in Add  3
+undefined
+function add(){
+var sum = 0;
+for(let i = 0; i<arguments.length; i++){
+sum+=arguments[i];
+}
+return sum;
+}
+undefined
+add();
+0
+add(1,2,3,4,5);
+15
+add(1,2,3,4,5,6,7,8,9,10);
+55
+add(1,2,3,"4",5,6,7,8,9,10);
+"645678910"
+function add(){
+var sum = 0;
+for(let i = 0; i<arguments.length; i++){
+sum+=parseInt(arguments[i]);
+}
+return sum;
+}
+undefined
+add(1,2,3,"4",5,6,7,8,9,10);
+55
+add(1,2,3,"four",5,6,7,8,9,10);
+NaN
+parseInt("100")
+100
+parseInt("hundred")
+NaN
+parseInt("hundred")  + 1000
+NaN
+function add(){
+var sum = 0;
+for(let i = 0; i<arguments.length; i++){
+sum+=isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+}
+return sum;
+}
+undefined
+add(1,2,3,"four",5,6,7,8,9,10);
+51
+function firstNumber(){
+return 1000;
+}
+undefined
+function secondNumber(){
+return 2000;
+}
+undefined
+add(firstNumber,secondNumber);
+0
+typeof(firstNumber)
+"function"
+function add(){
+var sum = 0;
+for(let i = 0; i<arguments.length; i++){
+if(typeof arguments[i]=="function"){
+arguments[i]  = arguments[i]();
+}
+sum+=isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+}
+return sum;
+}
+undefined
+add(firstNumber,secondNumber);
+3000
+add(firstNumber,secondNumber, 10,20,"ten"
+,10);
+3040
+var arr = [10,20,30];
+undefined
+typeof arr;
+"object"
+arr instanceof Array;
+true
+function add(){
+var sum = 0;
+for(let i = 0; i<arguments.length; i++){
+
+if(arguments[i] instanceof Array){
+for(let j = 0; j<arguments[i].length; j++){
+arguments.push(arguments[i][j]);
+//sum+=arguments[i][j];
+}
+}
+if(typeof arguments[i]=="function"){
+arguments[i]  = arguments[i]();
+}
+sum+=isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+}
+return sum;
+}
+undefined
+add(firstNumber,secondNumber, [1,2,3]);
+VM1766:7 Uncaught TypeError: arguments.push is not a function
+    at add (<anonymous>:7:11)
+    at <anonymous>:1:1
+add @ VM1766:7
+(anonymous) @ VM1807:1
+function add(){
+var sum = 0;
+for(let i = 0; i<arguments.length; i++){
+
+if(arguments[i] instanceof Array){
+for(let j = 0; j<arguments[i].length; j++){
+//arguments.push(arguments[i][j]);
+sum+=arguments[i][j];
+}
+}
+if(typeof arguments[i]=="function"){
+arguments[i]  = arguments[i]();
+}
+sum+=isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+}
+return sum;
+}
+undefined
+add(firstNumber,secondNumber, [1,2,3]);
+3007
+add(firstNumber,secondNumber, [1,2,3],10,
+"10","ten");
+3027
+function jQuery(){
+console.log(" I am JQuery ")
+}
+undefined
+jQuery();
+VM1910:2  I am JQuery 
+undefined
+jQuery("p");
+VM1910:2  I am JQuery 
+undefined
+jQuery(document);
+VM1910:2  I am JQuery 
+undefined
+var $ = jQuery;
+undefined
+$
+ƒ jQuery(){
+console.log(" I am JQuery ")
+}
+$("p")
+VM1910:2  I am JQuery 
+undefined
