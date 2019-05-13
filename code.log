@@ -1,0 +1,209 @@
+function show(){
+console.log("I am a function ");
+}
+undefined
+show();
+VM324:2 I am a function 
+undefined
+var test = function(){
+console.log("I am a Function Expression or Anonymous Function ");
+}
+undefined
+typeof test;
+"function"
+test();
+VM442:2 I am a Function Expression or Anonymous Function 
+undefined
+typeof show;
+"function"
+x = 1000;
+1000
+typeof x;
+"number"
+if(typeof (x) =='number'){
+}
+undefined
+if(typeof (x) =='number'){
+console.log('x is a number ');
+}
+VM582:2 x is a number 
+undefined
+if(typeof (x) =='function'){
+console.log('x is a number ');
+}
+undefined
+if(typeof (x) =='function'){
+console.log('x is a function ');
+}
+undefined
+typeof x;
+"number"
+show;
+ƒ show(){
+console.log("I am a function ");
+}
+typeof show;
+"function"
+x = show;
+ƒ show(){
+console.log("I am a function ");
+}
+x;
+ƒ show(){
+console.log("I am a function ");
+}
+typeof x;
+"function"
+if(typeof (x) =='function'){
+console.log('x is a function ');
+}
+VM693:2 x is a function 
+undefined
+z = 1000;
+1000
+r = "1000"
+"1000"
+x==z;
+false
+z==r;
+true
+x===z;
+false
+z===r;
+false
+function calc(){
+var add = function(x, y){
+return x + y;
+}
+var sub = function(){
+	return x - y;
+}
+return [add,sub];
+}
+undefined
+var t = calc();
+undefined
+t;
+(2) [ƒ, ƒ]0: ƒ (x, y)1: ƒ ()length: 2__proto__: Array(0)
+function calc(){
+var add = function(x, y){
+return x + y;
+}
+var sub = function(x,y){
+	return x - y;
+}
+return [add,sub];
+}
+undefined
+var t = calc();
+undefined
+t;
+(2) [ƒ, ƒ]0: ƒ (x, y)1: ƒ (x,y)length: 2__proto__: Array(0)
+t[0]
+ƒ (x, y){
+return x + y;
+}
+t[0]();
+NaN
+t[0](100,200);
+300
+t[1](10,20);
+-10
+calc()[0](10,20);
+30
+function calc(){
+var add = function addition(x, y){
+return x + y;
+}
+var sub = function subtraction(x,y){
+	return x - y;
+}
+return [add,sub];
+}
+undefined
+var t = calc();
+undefined
+t;
+(2) [ƒ, ƒ]0: ƒ addition(x, y)1: ƒ subtraction(x,y)length: 2__proto__: Array(0)
+t[0]();
+NaN
+t[0](10000,2000);
+12000
+function calc(){
+var add = function (x, y){
+return x + y;
+}
+var sub = function (x,y){
+	return x - y;
+}
+return {'addition':add,'subtraction':sub};
+}
+undefined
+var t = calc();
+undefined
+t;
+{addition: ƒ, subtraction: ƒ}
+typeof t;
+"object"
+t.addition(100,200)
+300
+var ram = {id:1001, name:'Ram ', marks:90};
+undefined
+var shyam = {id:1002, name:'Shyam'};
+undefined
+ram;
+{id: 1001, name: "Ram ", marks: 90}
+shyam;
+{id: 1002, name: "Shyam"}
+typeof ram;
+"object"
+typeof shyam;
+"object"
+ram instanceof Object;
+true
+shyam instanceof Object;
+true
+ram;
+{id: 1001, name: "Ram ", marks: 90}
+ram.award = "2019";
+"2019"
+ram;
+{id: 1001, name: "Ram ", marks: 90, award: "2019"}
+ram.job = "IT";
+"IT"
+ram;
+{id: 1001, name: "Ram ", marks: 90, award: "2019", job: "IT"}
+shyam;
+{id: 1002, name: "Shyam"}
+delete ram.job;
+true
+ram;
+{id: 1001, name: "Ram ", marks: 90, award: "2019"}
+var m = [10,20,30,40,50];
+undefined
+typeof m;
+"object"
+m instanceof Array;
+true
+typeof Array;
+"function"
+m instanceof Object;
+true
+var add = (x,y)=>x+y;
+undefined
+var addition = function (x,y){
+return x + y;
+}
+undefined
+typeof add;
+"function"
+add(10,20);
+30
+var add1 = (x,y)=>{
+console.log('X is '+x+' And Y is '+y);
+return x + y;
+}
+undefined
+add1(1000,200);
+VM1908:2 X is 1000 And Y is 200
+1200
