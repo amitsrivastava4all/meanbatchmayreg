@@ -1,251 +1,306 @@
-var a = 10;
-undefined
-typeof (a)
-"number"
-a = "Amit";
-"Amit"
-typeof (a)
-"string"
-a = true;
-true
-typeof (a)
-"boolean"
-var b ;
-undefined
-typeof b
-"undefined"
-var c = 1000;
-undefined
-var [x,y,z]= [10,20,30];
-undefined
-x
-10
-y
-20
-z
-30
-var t = [10,20,30,40,50]
-undefined
-t[100]
-undefined
-t.length
-5
-for(let q of t ){
-console.log(q);
+function show(){
+console.log("I am a function ");
 }
-VM394:2 10
-VM394:2 20
-VM394:2 30
-VM394:2 40
-VM394:2 50
 undefined
-t;
-(5) [10, 20, 30, 40, 50]
-t.push(1000);
-6
-t;
-(6) [10, 20, 30, 40, 50, 1000]
-t.pop();
-1000
-t;
-(5) [10, 20, 30, 40, 50]
-var r = t[0]
+show;
+ƒ show(){
+console.log("I am a function ");
+}
+typeof show;
+"function"
+typeof show()
+VM79:2 I am a function 
+"undefined"
+var m = show();
+VM79:2 I am a function 
 undefined
-r;
-10
-var e = t[2];
+m;
+undefined
+typeof m;
 
+"undefined"
+function calc(){
+var add = function(x, y){
+return x + y;
+}
+}
+undefined
+const MAX = 100;
+undefined
+MAX ++
+VM282:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:5
+(anonymous) @ VM282:1
+MAX = 200
+VM293:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:5
+(anonymous) @ VM293:1
+const PI = 3.14;
+undefined
+VOTE_AGE = 18;
+18
+age= 12;
+12
+if(age>=VOTE_AGE){
+console.log("U can Vote ");
+}
+else{
+console.log("U Can't Vote ");
+}
+VM493:5 U Can't Vote 
+undefined
+const VOTE_AGE = 18;
+undefined
+VOTE_AGE++
+VM536:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:9
+(anonymous) @ VM536:1
+if(age>=VOTE_AGE){
+console.log("U can Vote ");
+}
+else{
+console.log("U Can't Vote ");
+}
+VM540:5 U Can't Vote 
+undefined
+function calc(){
+const add = function(x, y){
+return x + y;
+}
+return add;
+}
+undefined
+var t= calc();
+undefined
+t;
+ƒ (x, y){
+return x + y;
+}
+t(100,200);
+300
+function calc(){
+var a = 100;
+var b = 200;
+const add = function(x, y){
+return x + y + a + b;
+}
+return add;
+}
+undefined
+t = calc();
+ƒ (x, y){
+return x + y + a + b;
+}
+t(1,2);
+303
+function auto(){
+var counter =0;
+counter++;
+return counter;
+}
+undefined
+auto()
+1
+auto()
+1
+auto()
+1
+var counter =0;
+function auto(){
+
+counter++;
+return counter;
+}
+undefined
+function init(){
+var counter =0;
+const auto=function(){
+
+counter++;
+return counter;
+}
+}
+undefined
+function init(){
+var counter =0;
+const auto=function(){
+
+counter++;
+return counter;
+}
+return auto;
+}
+undefined
+var m = init();
+undefined
+m();
+1
+m();
+2
+m();
+3
+m();
+4
+var m =init();
+undefined
+m();
+1
+m();
+2
+var tt = (function (){
+var counter =0;
+const auto=function(){
+
+counter++;
+return counter;
+}
+return auto;
+})()
+undefined
+tt;
+ƒ (){
+
+counter++;
+return counter;
+}
+tt()
+1
+tt()
+2
+tt()
+3
+function* otp(){
+yield 1234;
+yield 4444;
+yield 5555;
+yield 6764;
+}
+undefined
+var e = otp();
 undefined
 e;
-30
-var [x,,y,z] = t;
-undefined
-x;
-10
-y;
-
-30
-z;
-40
-var [x,,y,z,p,m] = t;
-undefined
-p
-50
-m
-undefined
-function add(){
-console.log(" I am in Add ");
+otp {<suspended>}
+e.next();
+{value: 1234, done: false}
+e.next();
+{value: 4444, done: false}
+e.next();
+{value: 5555, done: false}
+e.next();
+{value: 6764, done: false}
+e.next();
+{value: undefined, done: true}
+function* autoGen(){
+var counter = 0;
+counter++;
+yield counter;
+counter++;
+yield counter;
+counter++;
+yield counter;
+counter++;
+yield counter;
 }
 undefined
-add();
-VM649:2  I am in Add 
+var w = autoGen();
 undefined
-add(10,20,30)
-VM649:2  I am in Add 
-undefined
-add("one",10,[10,20])
-VM649:2  I am in Add 
-undefined
-console.dir(add);
-VM750:1 ƒ add()arguments: nullcaller: nulllength: 0name: "add"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM649:1[[Scopes]]: Scopes[1]
-undefined
-function add(){
-console.log(" I am in Add ",arguments.length);
+w.next();
+{value: 1, done: false}
+w.next();
+{value: 2, done: false}
+w.next();
+{value: 3, done: false}
+w.next();
+{value: 4, done: false}
+w.next();
+{value: undefined, done: true}
+function* autoGen(){
+var counter = 0;
+while(true){
+counter++;
+yield counter;
+}
 }
 undefined
-add();
-VM811:2  I am in Add  0
+var m = autoGen();
 undefined
-add(10,20,30)
-VM811:2  I am in Add  3
-undefined
-add("one",10,[10,20])
-VM811:2  I am in Add  3
-undefined
-function add(){
-var sum = 0;
-for(let i = 0; i<arguments.length; i++){
-sum+=arguments[i];
-}
-return sum;
-}
-undefined
-add();
-0
-add(1,2,3,4,5);
-15
-add(1,2,3,4,5,6,7,8,9,10);
-55
-add(1,2,3,"4",5,6,7,8,9,10);
-"645678910"
-function add(){
-var sum = 0;
-for(let i = 0; i<arguments.length; i++){
-sum+=parseInt(arguments[i]);
-}
-return sum;
-}
-undefined
-add(1,2,3,"4",5,6,7,8,9,10);
-55
-add(1,2,3,"four",5,6,7,8,9,10);
-NaN
-parseInt("100")
-100
-parseInt("hundred")
-NaN
-parseInt("hundred")  + 1000
-NaN
-function add(){
-var sum = 0;
-for(let i = 0; i<arguments.length; i++){
-sum+=isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
-}
-return sum;
-}
-undefined
-add(1,2,3,"four",5,6,7,8,9,10);
-51
-function firstNumber(){
-return 1000;
-}
-undefined
-function secondNumber(){
-return 2000;
-}
-undefined
-add(firstNumber,secondNumber);
-0
-typeof(firstNumber)
-"function"
-function add(){
-var sum = 0;
-for(let i = 0; i<arguments.length; i++){
-if(typeof arguments[i]=="function"){
-arguments[i]  = arguments[i]();
-}
-sum+=isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
-}
-return sum;
-}
-undefined
-add(firstNumber,secondNumber);
-3000
-add(firstNumber,secondNumber, 10,20,"ten"
-,10);
-3040
-var arr = [10,20,30];
-undefined
-typeof arr;
+m.next();
+{value: 1, done: false}
+m.next();
+{value: 2, done: false}
+m.next();
+{value: 3, done: false}
+m.next();
+{value: 4, done: false}
+m.next();
+{value: 5, done: false}
+typeof m;
 "object"
-arr instanceof Array;
-true
-function add(){
-var sum = 0;
-for(let i = 0; i<arguments.length; i++){
+m.next().value;
+6
+m.next().value;
+7
+m.next().value;
+8
+m.next().value;
+9
+m.next().value;
+10
+function test(fn){
+console.log("I am in Test ");
+fn();
+}
+undefined
+function show(){
+console.log(" I am Show ");
+}
+undefined
+test(show);
+VM1645:2 I am in Test 
+VM1699:2  I am Show 
+undefined
+test(function(){
+console.log(" i am anonymous function")
+});
+VM1645:2 I am in Test 
+VM1802:2  i am anonymous function
+undefined
+test(()=>console.log("I am Arrow Function"));
+VM1645:2 I am in Test 
+VM1871:1 I am Arrow Function
+undefined
+const evenOdd =(num)=>num%2==0?`Even ${num}`:`Odd ${num}`;
 
-if(arguments[i] instanceof Array){
-for(let j = 0; j<arguments[i].length; j++){
-arguments.push(arguments[i][j]);
-//sum+=arguments[i][j];
+undefined
+const cube = num=>num**3;
+undefined
+function loop(fn){
+for(let i =1;i<=10; i++){
+console.log(fn(i));
 }
-}
-if(typeof arguments[i]=="function"){
-arguments[i]  = arguments[i]();
-}
-sum+=isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
-}
-return sum;
 }
 undefined
-add(firstNumber,secondNumber, [1,2,3]);
-VM1766:7 Uncaught TypeError: arguments.push is not a function
-    at add (<anonymous>:7:11)
-    at <anonymous>:1:1
-add @ VM1766:7
-(anonymous) @ VM1807:1
-function add(){
-var sum = 0;
-for(let i = 0; i<arguments.length; i++){
-
-if(arguments[i] instanceof Array){
-for(let j = 0; j<arguments[i].length; j++){
-//arguments.push(arguments[i][j]);
-sum+=arguments[i][j];
-}
-}
-if(typeof arguments[i]=="function"){
-arguments[i]  = arguments[i]();
-}
-sum+=isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
-}
-return sum;
-}
+loop(evenOdd);
+VM2113:3 Odd 1
+VM2113:3 Even 2
+VM2113:3 Odd 3
+VM2113:3 Even 4
+VM2113:3 Odd 5
+VM2113:3 Even 6
+VM2113:3 Odd 7
+VM2113:3 Even 8
+VM2113:3 Odd 9
+VM2113:3 Even 10
 undefined
-add(firstNumber,secondNumber, [1,2,3]);
-3007
-add(firstNumber,secondNumber, [1,2,3],10,
-"10","ten");
-3027
-function jQuery(){
-console.log(" I am JQuery ")
-}
-undefined
-jQuery();
-VM1910:2  I am JQuery 
-undefined
-jQuery("p");
-VM1910:2  I am JQuery 
-undefined
-jQuery(document);
-VM1910:2  I am JQuery 
-undefined
-var $ = jQuery;
-undefined
-$
-ƒ jQuery(){
-console.log(" I am JQuery ")
-}
-$("p")
-VM1910:2  I am JQuery 
+loop(cube);
+VM2113:3 1
+VM2113:3 8
+VM2113:3 27
+VM2113:3 64
+VM2113:3 125
+VM2113:3 216
+VM2113:3 343
+VM2113:3 512
+VM2113:3 729
+VM2113:3 1000
 undefined
