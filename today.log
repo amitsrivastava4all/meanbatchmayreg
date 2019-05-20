@@ -1,223 +1,141 @@
-var a ;
-undefined
-typeof(a);
-"undefined"
-a = 1000;
-1000
-typeof(a);
-"number"
-a=1;
-1
-typeof(a);
-"number"
-a= 1000000;
-1000000
-typeof(a);
-"number"
-a = 100.20;
-100.2
-typeof(a);
-"number"
-a = 100 / 0 ;
-Infinity
-a
-Infinity
-typeof(a);
-"number"
-a = 100;
-100
-b = "100";
-"100"
-typeof(a);
-"number"
-typeof(b);
-"string"
-a + b
-"100100"
-a + parseInt(b);
-200
-c = "1000.20";
-"1000.20"
-parseInt(c);
-1000
-parseFloat(c);
-1000.2
-Number("1000");
-1000
-Number("1000.20")
-1000.2
-var x = new Number();
-undefined
-typeof x;
-"object"
-x instanceof Number;
-true
-function adder(){
-console.log(" I am Adder ");
+function Student(id , name, marks){
+this.id = id;
+this.name = name;
+this.marks = marks;
+
 }
-undefined
-typeof adder;
-"function"
-adder();
-VM604:2  I am Adder 
-undefined
-x.toExponential();
-"0e+0"
-typeof adder;
-"function"
-typeof Number;
-"function"
-typeof parseInt
-"function"
-parseInt("100");
-100
-window.parseInt("1000")
-1000
-typeof(window);
-"object"
-window.adder()
-VM604:2  I am Adder 
-undefined
-window instanceof Window;
-true
-typeof Window;
-"function"
-parseInt("Amit")
-NaN
-c = parseInt("Amit")
-NaN
-c
-NaN
-typeof(c)
-"number"
-isNaN(c)
-true
-isNaN(c)?0:c
-0
-c = 1000
-1000
-isNaN(c)?0:c
-1000
-c = 1000 * "Amit"
-NaN
-isNaN(c)?0:c
-0
-c = 1000/0;
-Infinity
-isFinite(c)?c:0
-0
-class A{
+Student.prototype.total = function(){
+	var sum = 0;
+	for(let mark of marks){
+    sum+=mark;
 }
+return sum;
+}
+Student.prototype.per = function(){
+	return this.total()/marks.length;
+}
+Student.prototype.grade = function(){
+	return this.per()>90?"A Grade ":"B Grade ";
+}
+Student.prototype.report = function(){
+	console.log(`Id is ${this.id} Name is ${this.name}`);
+	console.log('Marks are  ');
+	for(let mark of marks){
+		console.log('Mark '+mark);    
+}
+console.log(`Total ${this.total()} Per ${this.per()} Grade ${this.grade()}`);
+}
+ƒ (){
+	console.log(`Id is ${this.id} Name is ${this.name}`);
+	console.log('Marks are  ');
+	for(let mark of marks){
+		console.log('Mark '+mark);    
+}
+console.log(`Total ${this.total()} Per ${this.per()…
+var ram = new Student(1001, "Ram", [90,89,78]);
 undefined
-var e = new A();
+ram;
+Student {id: 1001, name: "Ram", marks: Array(3)}
+ram.report();
+VM839:21 Id is 1001 Name is Ram
+VM839:22 Marks are  
+VM839:23 Uncaught ReferenceError: marks is not defined
+    at Student.report (<anonymous>:23:18)
+    at <anonymous>:1:5
+Student.report @ VM839:23
+(anonymous) @ VM930:1
+function Student(id , name, marks){
+this.id = id;
+this.name = name;
+this.marks = marks;
+
+}
+Student.prototype.total = function(){
+	var sum = 0;
+	for(let mark of marks){
+    sum+=mark;
+}
+return sum;
+}
+Student.prototype.per = function(){
+	return this.total()/marks.length;
+}
+Student.prototype.grade = function(){
+	return this.per()>90?"A Grade ":"B Grade ";
+}
+Student.prototype.report = function(){
+	console.log(`Id is ${this.id} Name is ${this.name}`);
+	console.log('Marks are  ');
+	for(let mark of this.marks){
+		console.log('Mark '+mark);    
+}
+console.log(`Total ${this.total()} Per ${this.per()} Grade ${this.grade()}`);
+}
+ƒ (){
+	console.log(`Id is ${this.id} Name is ${this.name}`);
+	console.log('Marks are  ');
+	for(let mark of this.marks){
+		console.log('Mark '+mark);    
+}
+console.log(`Total ${this.total()} Per ${this.…
+var ram = new Student(1001, "Ram", [90,89,78]);
 undefined
-typeof e;
-"object"
-e instanceof A;.
-VM1033:1 Uncaught SyntaxError: Unexpected token .
-e instanceof A'
-VM1043:1 Uncaught SyntaxError: Invalid or unexpected token
-e instanceof A;
-true
-typeof A;
-"function"
-a = "Amit";
-"Amit"
-typeof (a)
-"string"
-a = 'Amit'
-"Amit"
-typeof (a)
-"string"
-a = ` hgjdfhgk
-gjdflkgjhd
-gdjglkdfhg	`;
-" hgjdfhgk
-gjdflkgjhd
-gdjglkdfhg	"
-typeof a
-"string"
-a = 1000;
-1000
-b = 2000
-2000
-console.log("A is "+a+ " and B is "+b);
-VM1232:1 A is 1000 and B is 2000
+ram.report();
+VM954:21 Id is 1001 Name is Ram
+VM954:22 Marks are  
+VM954:24 Mark 90
+VM954:24 Mark 89
+VM954:24 Mark 78
+VM954:9 Uncaught ReferenceError: marks is not defined
+    at Student.total (<anonymous>:9:18)
+    at Student.report (<anonymous>:26:27)
+    at <anonymous>:1:5
+Student.total @ VM954:9
+Student.report @ VM954:26
+(anonymous) @ VM965:1
+function Student(id , name, marks){
+this.id = id;
+this.name = name;
+this.marks = marks;
+
+}
+Student.prototype.total = function(){
+	var sum = 0;
+	for(let mark of this.marks){
+    sum+=mark;
+}
+return sum;
+}
+Student.prototype.per = function(){
+	return this.total()/this.marks.length;
+}
+Student.prototype.grade = function(){
+	return this.per()>90?"A Grade ":"B Grade ";
+}
+Student.prototype.report = function(){
+	console.log(`Id is ${this.id} Name is ${this.name}`);
+	console.log('Marks are  ');
+	for(let mark of this.marks){
+		console.log('Mark '+mark);    
+}
+console.log(`Total ${this.total()} Per ${this.per()} Grade ${this.grade()}`);
+}
+ƒ (){
+	console.log(`Id is ${this.id} Name is ${this.name}`);
+	console.log('Marks are  ');
+	for(let mark of this.marks){
+		console.log('Mark '+mark);    
+}
+console.log(`Total ${this.total()} Per ${this.…
+var ram = new Student(1001, "Ram", [90,89,78]);
 undefined
-console.log(`A is ${a} and B is ${b}`);
-VM1284:1 A is 1000 and B is 2000
+ram.report();
+VM981:21 Id is 1001 Name is Ram
+VM981:22 Marks are  
+VM981:24 Mark 90
+VM981:24 Mark 89
+VM981:24 Mark 78
+VM981:26 Total 257 Per 85.66666666666667 Grade B Grade 
 undefined
-a = true;
-true
-typeof a
-"boolean"
-a = false
-false
-typeof a
-"boolean"
-100 + true
-101
-100 + "100"
-"100100"
-100 - "100"
-0
-"Amit" + " Srivastava"
-"Amit Srivastava"
-msg = "Welcome "
-"Welcome "
-user = "Amit"
-"Amit"
-msg + user
-"Welcome Amit"
-"100" - "200"
--100
-"100" * 10
-1000
-"109"/2
-54.5
-2 **3
-8
-100 - "Amit"
-NaN
-var bag = ["apple","orange","mango"];
-undefined
-var temp = [44, 34,42,18,43,21];
-undefined
-var temp  = {"delhi":44, "mumbai":34};
-undefined
-temp["delhi"]
-44
-bag[0];
-"apple"
-typeof temp;
-"object"
-typeof bag;
-"object"
-bag instanceof Array;
-true
-temp instanceof Object;
-true
-x;
-Number {0}
-window;
-Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, parent: Window, …}
-bag instanceof Array;
-true
-bag instanceof Object;
-true
-window instanceof Window;
-true
-window instanceof Object;
-true
-x instanceof Number;
-true
-x instanceof Object
-true
-var score = {"team":"India", score:300};
-undefined
-console.log("Today "+score["team"]);
-VM2016:1 Today India
-undefined
-console.log("Today "+score["team"]+" Score is "+score["score"]);
-VM2063:1 Today India Score is 300
-undefined
+ram.per();
+85.66666666666667
