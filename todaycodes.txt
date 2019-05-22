@@ -1,0 +1,99 @@
+var obj = {a:100, b:200}
+var t = {a:9999,w:88,d:'Hello'};
+var m = {...obj,...t}
+var nnn = 10000;
+var b = {nnn};
+var w = {
+m:()=>{
+console.log("M is ",this);
+}
+}
+var w = {
+m:function(){
+console.log("M is ",this);
+}
+}
+w.m();
+window
+this
+
+window == this;
+
+var obj = {
+arr : [10,20,9,11,44,76,13,91],
+evenArr:[],
+evenOdd(){
+var that = this;
+	this.arr.forEach(function(ele){
+		if(ele%2==0){
+        	that.evenArr.push(ele);
+		}
+    })
+}
+/*evenOdd:function(){
+}*/
+}
+
+var obj = {
+arr : [10,20,9,11,44,76,13,91],
+evenArr:[],
+evenOdd(){
+
+	this.arr.forEach((ele)=>{
+		if(ele%2==0){
+        	this.evenArr.push(ele);
+		}
+    })
+}
+/*evenOdd:function(){
+}*/
+}
+obj.evenArr.length=0;
+obj.evenArr
+
+const a = {};
+a.e = 100;
+a.n = "Hello";
+for(let key in a){
+console.log('Key is ',key);
+}
+a.b;
+a["b"]
+for(let key in a){
+console.log('Value is ',a[key], " Key is ",key);
+}
+for(let key in a){
+delete a[key]
+//console.log('Value is ',a[key], " Key is ",key);
+}
+var obj = {};
+obj instanceof Window;
+obj instanceof Object;
+arr instanceof Array;
+arr instanceof Object;
+window instanceof Window;
+window instanceof Object;
+var arr = [10,20,30,50];
+var arr2 = [1,2,3,4];
+var t = arr + arr2;
+var n = [arr,arr2];
+var n = [...arr,...arr2];
+function show(){
+console.log(" I am SHow ",arguments.length);
+}
+function show(...a){
+console.log(" I am SHow ",a.length);
+}
+show();
+show(10);
+function test(x=10,y=20){
+console.log('X is ',x,' And Y is ',y);
+}
+function test(x,y){
+console.log('X is ',x,' And Y is ',y);
+x = x || 10;
+y = y || 20;
+console.log('X is ',x,' And Y is ',y);
+}
+test();
+test(1000,2000);
