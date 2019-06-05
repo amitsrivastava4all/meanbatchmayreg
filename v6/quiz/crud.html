@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        i{
+            cursor: pointer;
+        }
+    h1,p,span,h2{
+        font-family: 'Roboto', sans-serif;
+    }
+    </style>
+    <script src="scripts/admin/crud/question.js"></script>
+    <script src="scripts/admin/crud/questionoperations.js"></script>
+    <script src="scripts/admin/crud/controller.js"> </script>
+</head>
+<body>
+    <!-- Build by Amit-->
+    <div class='container'>
+            <h1>Welcome <span id='userid'></span> CRUD </h1>
+        <div class='form-group'>
+            <label for="">Question Id </label>
+            <input id="id" class='form-control' type="text" placeholder="Type Question Id">
+        </div>
+        <div class='form-group'>
+                <label for="">Name </label>
+               <textarea placeholder="Type Question Here" class="form-control"  id="name" cols="30" rows="10"></textarea>
+            </div>
+            <div class='form-group'><label for="">OptionA</label>
+                <input id='optiona' class='form-control' placeholder="Type Option Here" type="text">
+            </div>
+            <div class='form-group'><label for="">OptionB</label>
+                <input id='optionb' class='form-control' placeholder="Type Option Here" type="text">
+            </div>
+            <div class='form-group'><label for="">OptionC</label>
+                <input id='optionc' class='form-control' placeholder="Type Option Here" type="text"></div>
+            <div class='form-group'><label for="">OptionD</label>
+                <input id='optiond' class='form-control' placeholder="Type Option Here" type="text"></div>
+            <div class='form-group'><label for="">Right Ans</label>
+                <input id='rans' class='form-control' placeholder="Type Right Answer Here" type="text"></div>
+            <div class='form-group'><label for="">Score</label>
+                <input id='score' class='form-control' min="1" max="5" type="range"></div>
+            <h1>Total <span id='total'></span>    Mark <span id='mark'></span>    UnMark <span id='unmark'></span></h1>
+                <div>
+                <button id='add' class='btn btn-primary'>Add</button>
+                <button id='delete' class='btn btn-danger'>Delete</button>
+                <button class='btn btn-info'>Search</button>
+                <button class='btn btn-warning'>Update</button>
+                <button class='btn btn-success'>Save</button>
+                <button class='btn btn-secondary'>Load</button>
+                <button class='btn btn-dark'>Sort</button>
+                <button class='btn btn-primary'>Load From Server</button>
+                <button class='btn btn-danger'>Clear All</button>
+            </div>
+            <!-- List Section Starts Here-->
+            <br>
+            <table class='table table-bordered'>
+                <thead class='thead-dark'>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>OptionA</th>
+                        <th>OptionB</th>
+                        <th>OptionC</th>
+                        <th>OptionD</th>
+                        <th>Right Ans</th>
+                        <th>Score</th>
+                        <th>Operations</th>
+                    </tr>
+                </thead>
+                <tbody id="questionbody"></tbody>
+            </table>
+
+</div>
+
+</body>
+</html>
